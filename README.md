@@ -34,8 +34,8 @@ A modern, responsive web application that converts text to natural-sounding spee
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/rezashahnazar/ai-text-to-voice.git
-   cd ai-text-to-voice
+   git clone https://github.com/rezashahnazar/ai-text-to-speech.git
+   cd ai-text-to-speech
    ```
 
 2. Install dependencies:
