@@ -26,6 +26,7 @@ A modern, responsive web application that converts text to natural-sounding spee
 ### Prerequisites
 
 - Node.js 18.17 or later
+- pnpm 8.0 or later
 - OpenAI API key
 
 ### Installation
@@ -33,17 +34,17 @@ A modern, responsive web application that converts text to natural-sounding spee
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/aisdk-voice.git
-   cd aisdk-voice
+   git clone https://github.com/rezashahnazar/ai-text-to-voice.git
+   cd ai-text-to-voice
    ```
 
 2. Install dependencies:
 
    ```bash
-   npm install
+   pnpm install
    ```
 
-3. Create a `.env` file in the root directory:
+3. Create a `.env.local` file in the root directory:
 
    ```env
    OPENAI_API_KEY=your_api_key_here
@@ -53,7 +54,7 @@ A modern, responsive web application that converts text to natural-sounding spee
 4. Run the development server:
 
    ```bash
-   npm run dev
+   pnpm dev
    ```
 
 5. Open [http://localhost:3000](http://localhost:3000) in your browser.
@@ -113,10 +114,10 @@ aisdk-voice/
 
 ### Scripts
 
-- `npm run dev`: Start development server
-- `npm run build`: Build for production
-- `npm start`: Start production server
-- `npm run lint`: Run ESLint
+- `pnpm dev`: Start development server
+- `pnpm build`: Build for production
+- `pnpm start`: Start production server
+- `pnpm lint`: Run ESLint
 
 ## Contributing
 
