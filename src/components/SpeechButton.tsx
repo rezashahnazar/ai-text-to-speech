@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, KeyboardEvent } from "react";
 
 export default function SpeechButton() {
   const [isLoading, setIsLoading] = useState(false);
@@ -45,6 +45,18 @@ export default function SpeechButton() {
     }
   };
 
+  const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (
+      e.key === "Enter" &&
+      (e.metaKey || e.ctrlKey) &&
+      !isLoading &&
+      text.trim()
+    ) {
+      e.preventDefault();
+      handleSpeech();
+    }
+  };
+
   return (
     <div className="min-h-dvh w-full flex items-center justify-center bg-[#1a1f2e]">
       <div className="w-full max-w-2xl bg-[#232838] rounded-3xl shadow-lg p-8 space-y-6 mx-4">
@@ -62,6 +74,7 @@ export default function SpeechButton() {
               setText(e.target.value);
               setError(null);
             }}
+            onKeyDown={handleKeyDown}
             placeholder="Enter text to convert to speech..."
             className={`w-full h-40 p-4 border rounded-xl focus:outline-none focus:ring-2 transition-all duration-200 resize-none
               bg-[#2b3140] border-[#3a4051] text-white
@@ -79,6 +92,9 @@ export default function SpeechButton() {
               {error}
             </p>
           )}
+          <p className="absolute bottom-3 right-3 text-sm text-gray-500">
+            Press ⌘+Enter to generate
+          </p>
         </div>
 
         <div className="flex justify-end">
